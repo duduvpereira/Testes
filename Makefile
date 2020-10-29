@@ -29,5 +29,5 @@ valgrind:
 	valgrind --leak-check=full --show-leak-kinds=all ./idt
 
 adressSanitizer:
-	gcc -g -Wall -Wfatal-errors -fsanitize=address ./identifier/src/IdentifierTests.c -o idt
-	./idt
+	gcc -g -Wall -Wfatal-errors -fsanitize=address ./identifier/src/IdentifierTests.c -o idt2
+	./idt2

@@ -53,7 +53,7 @@ int Identifier() {
 int main(void)
 {
   int i = Identifier();
-  char temp[5];
-  temp[5] = 0 ;
+  //char temp[5];
+  //temp[5] = 0 ;
   return i;
 }
