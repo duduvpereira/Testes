@@ -12,6 +12,9 @@ addons:
       - gcc
 install:
   - "[ $GCC = gcc ] && export GCC=gcc || true"
+before_install:
+  sudo apt-get install cppcheck
+  sudo apt-get install valgrind
 script:
   - make
 #  - make test
