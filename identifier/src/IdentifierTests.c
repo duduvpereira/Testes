@@ -49,7 +49,7 @@ int Identifier() {
   }
 }
 
-/*
+
 int main(void)
 {
   int i = Identifier();
@@ -57,4 +57,3 @@ int main(void)
   temp[5] = 0 ;
   return i;
 }
-*/
