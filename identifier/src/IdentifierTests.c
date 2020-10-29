@@ -6,8 +6,8 @@
 // ----------------------------------------------------------------
 
 #include <stdio.h>
-
-int valid_s(char ch) {
+#include <string.h>
+int valid_s(char *ch) {
   if (((ch >= 'A') && (ch <= 'Z')) || ((ch >= 'a') && (ch <= 'z')))
     return 1;
   else
@@ -21,25 +21,28 @@ int valid_f(char ch) {
     return 0;
 }
 
-int Identifier() {
-  char achar;
+int Identifier(char achar[]) {
+  //char achar;
   int  length, valid_id;
   length = 0;
   printf("Identificador: ");
-  achar = fgetc(stdin);
-  valid_id = valid_s(achar);
+  //achar = fgetc(stdin);
+  valid_id = valid_s(achar[0]);
   if(valid_id) {
     length = 1;
   }
-  achar = fgetc(stdin);
-  while(achar != '\n') {
-    if(!(valid_f(achar))) {
+  //achar = fgetc(stdin);
+  //while(achar != '\n') {
+  int i = 0;
+  while(achar[i] != NULL){
+    if(!(valid_f(achar[i]))) {
       valid_id = 0;
     }
     length++;
-    achar = fgetc(stdin);
+    i++;
+    //achar = fgetc(stdin);
   }
-  if (valid_id && (length >= 1) && (length < 6)) {
+  if (valid_id && (length >= 1) && (length <= 6)) {
     printf("Valido\n");
     return 0;
   }
@@ -50,10 +53,18 @@ int Identifier() {
 }
 
 
-int main(void)
+int main(int argc, char *in[])
 {
-  int i = Identifier();
+  if (argc != 2) {
+		printf("Usage: %s iface\n", in[0]);
+		return 1;
+	}
+  char temp[100];
+	strcpy(temp, in[1]);
+  //printf("%s", temp);
+  int i = Identifier(temp);
   //char temp[5];
   //temp[5] = 0 ;
   return i;
+  //return 0;
 }

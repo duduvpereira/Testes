@@ -21,7 +21,7 @@ TEST_TEAR_DOWN(Identifier)
 TEST(Identifier, TestIdentifier1)
 {
   // All of these should pass
-  TEST_ASSERT_EQUAL(0, Identifier());
+  TEST_ASSERT_EQUAL(0, Identifier("abcde"));
 }
 
 TEST(Identifier, TestIdentifier2)

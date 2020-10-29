@@ -26,8 +26,8 @@ cppcheck:
 
 valgrind:
 	gcc ./identifier/src/IdentifierTests.c -o idt
-	valgrind --leak-check=full --show-leak-kinds=all ./idt
+	valgrind --leak-check=full --show-leak-kinds=all ./idt abc
 
 adressSanitizer:
 	gcc -g -Wall -Wfatal-errors -fsanitize=address ./identifier/src/IdentifierTests.c -o idt2
-	./idt2
+	./idt2 abc
