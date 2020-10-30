@@ -63,8 +63,8 @@ int main(int argc, char *in[])
 	strcpy(temp, in[1]);
   //printf("%s", temp);
   int i = Identifier(temp);
-  //char temp[5];
-  //temp[5] = 0 ;
+  char tempi[5];
+  tempi[5] = 0 ;
   return i;
   //return 0;
 }
